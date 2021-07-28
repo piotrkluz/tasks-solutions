@@ -76,7 +76,6 @@ class CalculatorTest {
         shouldThrow(new Integer[]{1, -1, 5}, "FOUND: -1");
     }
 
-
     private void shouldPass(Integer[] input, Integer[] expected) {
         Integer[] actual = Calculator.addOneToEach(input);
 
@@ -89,6 +88,8 @@ class CalculatorTest {
                 () -> Calculator.addOneToEach(input)
         );
 
-        assertTrue(ex.getMessage().contains(containMessage), "Exception message should contain: " + containMessage + "\nACTUAL is: " + ex.getMessage() + "\n\n");
+        assertTrue(ex.getMessage().contains(containMessage),
+                "Exception message should contain: " + containMessage +
+                        "\nACTUAL is: " + ex.getMessage() + "\n\n");
     }
 }
